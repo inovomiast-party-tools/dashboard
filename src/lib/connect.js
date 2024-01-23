@@ -4,18 +4,17 @@ const { MONGODB_URI } = process.env;
 
 const connectDB = async () => {
   try {
-    mongoose.connect(MONGODB_URI);
+    if (mongoose.connection.readyState === 0) { // Check if mongoose is not connected
+      await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
-    if (mongoose.connection) {
       mongoose.connection.on("error", (error) => {
         console.log(
           "MongoDB connection error. Please make sure MongoDB is running.",
           error
         );
-        // Show error message in console
         process.exit();
       });
-      mongoose.connection.on("connected", () => {
+      mongoose.connection.once("open", () => { // Use 'once' instead of 'on' to avoid adding multiple listeners
         console.log("MongoDB connected.");
       });
       mongoose.connection.on("disconnected", () => {
