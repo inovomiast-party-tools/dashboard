@@ -40,7 +40,7 @@ const List = () => {
   }, []);
 
   return (
-    <div className="mt-5 bg-gray-800 rounded-lg w-80 border-2 border-white h-[450px]">
+    <div className="mt-5 bg-gray-800 rounded-lg w-80 border-2 border-white h-[500px]">
       <div className="flex items-center justify-center h-full overflow-auto">
         {loading ? (
           <div className="flex flex-col items-center justify-center w-full h-full">
@@ -49,7 +49,7 @@ const List = () => {
           <p className="mt-2 text-white">Cargando...</p> {/* Margin top for spacing */}
         </div>
         ) : (
-          <table className="table w-full">
+          <table className="table w-full mt-10">
             <thead>
               <tr>
                 <th>Nombre</th>

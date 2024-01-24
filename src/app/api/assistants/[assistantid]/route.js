@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
-import connectDB from '@/lib/connection';
 import Assistant from '@/models/Assistant';
+import connectDB from '@/lib/connect';
 
 export const GET = async (req) => {
     try {

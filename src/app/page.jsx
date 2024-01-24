@@ -1,25 +1,26 @@
-import SidebarMenu from "@/components/SidebarMenu";
-import Counter from "@/components/widgets/Counter";
-import List from "@/components/widgets/List";
-import Music from "@/components/widgets/Music";
+import React from 'react';
+import { SidebarMenu, List, Counter, Music, Transactions } from '@/components/widgets'
 
 export default function Home() {
   return (
-    <div className="flex h-screen"> {/* Ensure full height and flex layout */}
-      <aside className="w-64"> {/* Fixed width for sidebar */}
+    <div className="flex h-screen">
+      <aside className="w-64">
         <SidebarMenu />
       </aside>
-      <main className="flex-grow overflow-hidden select-none"> {/* Allow main to grow and fill space */}
-        <div className="flex w-full"> {/* Flex container for the top row */}
-          <div className="flex flex-col w-auto"> {/* Column container for Counter and List */}
-            <div> {/* Container for Counter */}
+      <main className="flex-grow overflow-hidden select-none">
+        <div className="flex w-full">
+          <div className="flex flex-col w-auto">
+            <div>
               <Counter />
             </div>
-            <div> {/* Container for List */}
+            <div>
               <List />
             </div>
           </div>
-          <Music />
+          <div className="flex flex-col flex-grow">
+            <Music />
+            <Transactions />
+          </div>
         </div>
       </main>
       <footer>

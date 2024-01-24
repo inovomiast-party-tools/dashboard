@@ -5,7 +5,7 @@ const { MONGODB_URI } = process.env;
 const connectDB = async () => {
   try {
     if (mongoose.connection.readyState === 0) { // Check if mongoose is not connected
-      await mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+      await mongoose.connect(MONGODB_URI);3
 
       mongoose.connection.on("error", (error) => {
         console.log(
