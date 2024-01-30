@@ -49,7 +49,7 @@ const List = () => {
           <p className="mt-2 text-white">Cargando...</p> {/* Margin top for spacing */}
         </div>
         ) : (
-          <table className="table w-full mt-10">
+          <table className="table w-full mt-[580px]">
             <thead>
               <tr>
                 <th>Nombre</th>

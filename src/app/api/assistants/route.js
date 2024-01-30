@@ -2,8 +2,9 @@ import { NextResponse } from "next/server";
 import connectDB from "@/lib/connect";
 import Assistant from "@/models/Assistant";
 import { v4 as uuid4 } from "uuid";
+import auth from '@/lib/auth'; // Import the verifyToken function
 
-export const GET = async () => {
+export const GET = async ({ headers }) => {
   try {
     await connectDB();
     const assistants = await Assistant.find({});

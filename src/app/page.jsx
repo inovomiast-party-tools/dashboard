@@ -4,10 +4,10 @@ import { SidebarMenu, List, Counter, Music, Transactions } from '@/components/wi
 export default function Home() {
   return (
     <div className="flex h-screen">
-      <aside className="w-64">
+      <aside className="sticky w-64">
         <SidebarMenu />
       </aside>
-      <main className="flex-grow overflow-hidden select-none">
+      <main className="flex-grow overflow-auto select-none">
         <div className="flex w-full">
           <div className="flex flex-col w-auto">
             <div>
@@ -21,6 +21,12 @@ export default function Home() {
             <Music />
             <Transactions />
           </div>
+        </div>
+        <br />
+        <div className='text-xl font-bold divider'>Other Section</div>
+        <br />
+        <div className='flex w-full'>
+          
         </div>
       </main>
       <footer>
